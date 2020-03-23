@@ -1,11 +1,13 @@
 # TODO
 
 - [X] webpack
-- [] SASS
+- [X] SASS
 - [X] CSS
-- [] image of the site
-- [] typescript
-- [] react
+- [X] images site
+- [X] typescript
+- [X] react
+- [] react hot reloader
+- [] favicon.ico
 - [] router
 - [] redux
 - [] i18next

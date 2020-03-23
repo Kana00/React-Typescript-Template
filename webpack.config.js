@@ -6,7 +6,7 @@ module.exports = {
   entry: {
     /* All files that need to be grouped together into a <script src='...'> */
     hot_module: 'react-hot-loader/patch',
-    start: './src/start.ts'
+    start: './src/start.tsx'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -25,12 +25,31 @@ module.exports = {
     /* Generate index.html file in dist with all bundled file needed */
     new HtmlWebpackPlugin({ template: './src/index.html' })
   ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
+        /* TypeScript need this to handle javascrit source map */
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
+      },
       {
         /* when found import 'mystyle.css' -> put in <head> a <style> stringified*/
         test: /\.css$/,
         use: ['style-loader', 'css-loader',],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        /* Chaine this 3 loaders */
+        use: ['style-loader', 'css-loader', 'sass-loader',],
       },
       {
         /*
@@ -40,14 +59,6 @@ module.exports = {
         test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader',],
       },
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      },
     ],
-  },
-  resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
   }
 };
