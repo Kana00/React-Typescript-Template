@@ -6,8 +6,8 @@
 - [X] images site
 - [X] typescript
 - [X] react
-- [] react hot reloader
-- [] favicon.ico
+- [X] react hot reloader
+- [X] favicon.ico
 - [] router
 - [] redux
 - [] i18next

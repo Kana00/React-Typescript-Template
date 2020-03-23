@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -21,7 +22,8 @@ module.exports = {
     /* Before bundling, remove files in dist folder */
     new WebpackCleanupPlugin(),
     /* Generate index.html file in dist with all bundled file needed */
-    new HtmlWebpackPlugin({ template: './src/index.html' })
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new FaviconsWebpackPlugin('./src/assets/images/favicon.svg')
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -48,11 +50,6 @@ module.exports = {
           },
         },
       },
-      // {
-      //   test: /\.tsx?$/,
-      //   use: 'ts-loader',
-      //   exclude: /node_modules/
-      // },
       {
         /* TypeScript need this to handle javascrit source map */
         enforce: "pre",
