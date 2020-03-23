@@ -15,9 +15,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
-    /* disable total refresh on the page for each saved file */
-    hot: true,
+    contentBase: './dist'
   },
   plugins: [
     /* Before bundling, remove files in dist folder */
@@ -31,10 +29,30 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        test: /\.(j|t)s(x)?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            babelrc: false,
+            presets: [
+              [
+                '@babel/preset-env',
+                { targets: { browsers: 'last 2 versions' } }, // or whatever your project requires
+              ],
+              '@babel/preset-typescript',
+              '@babel/preset-react',
+            ],
+            plugins: ['react-hot-loader/babel'],
+          },
+        },
       },
+      // {
+      //   test: /\.tsx?$/,
+      //   use: 'ts-loader',
+      //   exclude: /node_modules/
+      // },
       {
         /* TypeScript need this to handle javascrit source map */
         enforce: "pre",

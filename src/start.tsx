@@ -1,18 +1,15 @@
 import * as ReactDOM from "react-dom";
 import React from "react";
+import { hot } from 'react-hot-loader/root';
 
-
-export default class App extends React.Component<{}, {}> {
+class App extends React.Component<{}, {}> {
   render() {
-      return <h1>Hello gg!</h1>;
+      return (
+        <div>
+          <h1>Hello React!</h1>
+        </div>
+      );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('react-root'));
-
-// if (module.hot) {
-//   // foreach module need to be hot ...
-//   module.hot.accept('./youtModule.js', () => {
-//     // do something if a module need to be reload
-//   });
-// }
+ReactDOM.render(React.createElement(hot(App)), document.getElementById('react-root'));
