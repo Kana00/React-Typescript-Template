@@ -39,10 +39,7 @@ module.exports = {
             cacheDirectory: true,
             babelrc: false,
             presets: [
-              [
-                '@babel/preset-env',
-                { targets: { browsers: 'last 2 versions' } }, // or whatever your project requires
-              ],
+              '@babel/preset-env',
               '@babel/preset-typescript',
               '@babel/preset-react',
             ],
@@ -64,7 +61,7 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         /* Chaine this 3 loaders */
-        use: ['style-loader', 'css-loader', 'sass-loader',],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         /*

@@ -8,7 +8,7 @@
 - [X] react
 - [X] react hot reloader
 - [X] favicon.ico
-- [] router
+- [X] router
 - [] redux
 - [] i18next
 - [] Quike share ngrok

@@ -1,17 +1,31 @@
 import * as ReactDOM from "react-dom";
 import React from "react";
 import { hot } from 'react-hot-loader/root';
+import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
+import Header from './components/header/Header';
+import Error404 from './components/Error404/Error404';
 
-class App extends React.Component<{}, {}> {
+import './global.scss';
+
+class App extends React.Component<any, {}> {
+  constructor(props:any) {
+    super(props);
+    // this.props.history.push('/foo');
+  }
+
   componentDidMount() {
     document.title = 'React Application';
   }
 
   render() {
     return (
-      <div>
-        <h1>Hello React!</h1>
-      </div>
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route exact path="/" />
+          <Route path="*" component={Error404}/>
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
