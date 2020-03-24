@@ -1,4 +1,28 @@
+@import '../../assets/styles/theme.scss';
+
 .hr {
   border: 1px solid rgb(211, 211, 211);
   border-radius: 10px;
+}
+
+#header-bar {
+  color: white;
+  background-color: $primary-color;
+  margin-bottom: 1rem;
+}
+
+#header-content {
+  padding: 1rem 0;
+  margin: 0 auto;
+  width: $content-width;
+}
+
+#title-site {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.content {
+  width: $content-width;
+  margin: 0 auto;
 }
