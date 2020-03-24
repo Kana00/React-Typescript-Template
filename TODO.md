@@ -9,7 +9,7 @@
 - [X] react hot reloader
 - [X] favicon.ico
 - [X] router
-- [] i18next
+- [X] i18next
 - [] redux
 - [] debugger
 - [] Quike share ngrok
