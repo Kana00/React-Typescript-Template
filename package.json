@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "npx webpack-dev-server --open --hot",
-    "build": "npx webpack --config ./webpack.config.js"
+    "build": "npx webpack --config ./webpack.config.js",
+    "shareProduction": "ngrok http -bind-tls=true file:///Users/YOUR_USER/Documents/web-site-new-project/dist",
+    "shareWebpack": "ngrok http localhost:8080 -bind-tls=true -host-header='localhost:8080'"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

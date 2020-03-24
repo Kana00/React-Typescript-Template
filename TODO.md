@@ -11,11 +11,12 @@
 - [X] router
 - [X] i18next
 - [X] redux
-- [] debugger
-- [] Quike share ngrok
+- [X] debugger
+- [X] Quike share ngrok
 - [] Unit test
 - [] react router with redux
 - [] changing language width react-redux
 - [] GraphQL
 - [] Add icon to the list preview
 - [] footer et header
+- [] version of production
