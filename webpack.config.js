@@ -51,7 +51,8 @@ module.exports = {
         /* TypeScript need this to handle javascrit source map */
         enforce: "pre",
         test: /\.js$/,
-        loader: "source-map-loader"
+        loader: "source-map-loader",
+        exclude: /node_modules/,
       },
       {
         /* when found import 'mystyle.css' -> put in <head> a <style> stringified*/
