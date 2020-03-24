@@ -1,8 +1,10 @@
 import React from 'react';
 import './header.scss';
 import i18next from 'i18next';
+import { connect } from 'react-redux';
+import { AppDispatch } from  '../../redux/store';
 
-export default class Header extends React.Component<{}, {}> {
+class Header extends React.Component<any, {}> {
   render() {
     return (
       <div>
@@ -33,3 +35,19 @@ export default class Header extends React.Component<{}, {}> {
     );
   }
 }
+
+const mapStateToProps = (state: AppDispatch) => {
+  return {
+    message: state.rootScreenReducer.message
+  }
+}
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     onTodoClick: id => {
+//       dispatch(toggleTodo(id))
+//     }
+//   }
+// }
+const HeaderConnect = connect(mapStateToProps)(Header)
+export default HeaderConnect;
