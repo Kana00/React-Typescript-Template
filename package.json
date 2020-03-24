@@ -32,7 +32,9 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@unly/universal-language-detector": "^2.0.3",
     "babel-loader": "^8.1.0",
+    "i18next": "^19.3.3",
     "react": "^16.13.1",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-hot-loader": "^4.12.20",

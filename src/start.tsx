@@ -1,9 +1,10 @@
 import * as ReactDOM from "react-dom";
 import React from "react";
 import { hot } from 'react-hot-loader/root';
-import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
+import {BrowserRouter,Switch,Route} from "react-router-dom";
 import Header from './components/header/Header';
 import Error404 from './components/Error404/Error404';
+import './i18n/language';
 
 import './global.scss';
 

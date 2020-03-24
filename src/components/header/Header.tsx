@@ -1,13 +1,24 @@
 import React from 'react';
 import './header.scss';
+import i18next from 'i18next';
 
-export default class Header extends React.Component<{},{}> {
+export default class Header extends React.Component<{}, {}> {
   render() {
     return (
       <div>
-        <h2>React Application</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, labore quo dicta et rerum error laboriosam enim est consequuntur impedit earum accusamus dolor, quasi magnam consequatur magni ipsam commodi rem?</p>
-        <hr className='hr'/>
+        <h2>{i18next.t('Title')}</h2>
+        <p>{i18next.t('description Application')}</p>
+        <ul>
+          <li>Webpack 4</li>
+          <li>TypeScript 3</li>
+          <li>React 16</li>
+          <li>Sass styling</li>
+          <li>React Router</li>
+          <li>Redux</li>
+          <li>i18next</li>
+          <li>Debugger with VS Code</li>
+        </ul>
+        <hr className='hr' />
       </div>
     );
   }
