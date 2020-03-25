@@ -5,6 +5,7 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from './components/header/Header';
+import Footer from './components/Footer/Footer';
 import Error404 from './components/Error404/Error404';
 import './i18n/language';
 import { ApolloProvider } from 'react-apollo';
@@ -12,6 +13,7 @@ import { ApolloClient } from 'apollo-client';
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import './assets/styles/global.scss';
+import './assets/styles/site_structure.scss';
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
@@ -38,11 +40,16 @@ class App extends React.Component<any, {}> {
       <BrowserRouter>
         <ApolloProvider client={apolloClient}>
           <Provider store={store}>
-            <Header />
-            <Switch>
-              <Route exact path="/" />
-              <Route path="*" component={Error404} />
-            </Switch>
+            <div className="Site">
+              <Header />
+              <div className="Site-content">
+                <Switch>
+                  <Route exact path="/" />
+                  <Route path="*" component={Error404} />
+                </Switch>
+              </div>
+              <Footer />
+            </div>
           </Provider>
         </ApolloProvider>
       </BrowserRouter>
