@@ -16,7 +16,7 @@ export default class Header extends React.Component<any, any> {
               </div>
             </div>
             <div className="part-two">
-              icon
+              <Link to='connexion' className="link-in-block">connexion user</Link>
             </div>
           </div>
         </div>
