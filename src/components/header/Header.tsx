@@ -54,10 +54,9 @@ class Header extends React.Component<any, any> {
           <p>Redux demo : {this.props.message}</p>
             <Query query={GET_CONTRIES_NAME}>
               {(response: QueryResult<any, Record<string, any>>)=> {
-                console.log(response);
                 if(response.loading) return <p>Loading...</p>
-                console.log(response.data);
-                return <p>GraphQL (apollo) demo : {response.data.countries[0].name}</p>
+                const random = Math.floor(Math.random() * 250);
+                return <p>GraphQL (apollo) demo : {response.data.countries[random].name}</p>
               }}
             </Query>
         </div>
