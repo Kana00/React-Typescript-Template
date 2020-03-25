@@ -14,7 +14,7 @@
 - [X] debugger
 - [X] Quike share ngrok
 - [X] Unit test
-- [] GraphQL
+- [X] GraphQL
 - [] footer et header
 - [] Add icon to the list preview of technology
 - [] react router with redux
