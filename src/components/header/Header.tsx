@@ -28,11 +28,11 @@ class Header extends React.Component<any, any> {
   }
   render() {
     return (
-      <div>
+      <header className="Site-header">
         <div id="header-bar">
-          <div id="header-content">
-            Website Title
-          </div>
+          <h3 id="header-content">
+            Header
+          </h3>
         </div>
 
         <div className='content'>
@@ -61,8 +61,7 @@ class Header extends React.Component<any, any> {
               }}
             </Query>
         </div>
-        <hr className='hr' />
-      </div>
+      </header>
     );
   }
 }
