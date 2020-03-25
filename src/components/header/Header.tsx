@@ -47,6 +47,7 @@ class Header extends React.Component<any, any> {
             <li>React Router</li>
             <li>Redux</li>
             <li>i18next</li>
+            <li>GraphQL with Apollo</li>
             <li>Unit testing with Jest</li>
             <li>Debugger with VS Code</li>
           </ul>
