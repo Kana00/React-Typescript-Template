@@ -1,7 +1,7 @@
 {
-  "name": "web-site-new-project",
+  "name": "react-typescript-template",
   "version": "1.0.0",
-  "author": "Kana00 <Illya.delsarte@gmail.com>",
+  "author": "Kana00",
   "license": "MIT",
   "scripts": {
     "start": "npx webpack-dev-server --open --hot",
