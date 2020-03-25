@@ -16,6 +16,4 @@
 - [X] Unit test
 - [X] GraphQL
 - [X] footer et header
-- [] react router with redux
-- [] changing language width react-redux
 - [] version of production in webpack
