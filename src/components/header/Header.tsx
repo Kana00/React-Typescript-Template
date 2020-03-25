@@ -30,9 +30,7 @@ class Header extends React.Component<any, any> {
     return (
       <header className="Site-header">
         <div id="header-bar">
-          <h3 id="header-content">
-            Header
-          </h3>
+          <h3 id="header-content">Header</h3>
         </div>
 
         <div className='content'>
