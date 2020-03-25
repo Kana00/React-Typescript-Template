@@ -29,7 +29,7 @@ You will need to install the following modules for optimization reasons
 # install yarn here: https://classic.yarnpkg.com/en/docs/install
 # install ngrok here: https://ngrok.com/download
 > yarn global add npx cross-env
-> cd WHERE_IS_THE_PROJECT
+> cd path_to_your_project
 > yarn install
 > yarn start
 ```
