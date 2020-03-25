@@ -3,39 +3,28 @@ import './header.scss';
 import i18next from 'i18next';
 import { connect } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
-import { ApolloClient } from 'apollo-client';
-import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
+import { Query, QueryResult } from "react-apollo";
 import gql from "graphql-tag";
 
-const cache = new InMemoryCache();
-const link = new HttpLink({
-  uri: 'https://countries.trevorblades.com/'
-});
+const GET_CONTRIES_NAME = gql`
+{
+  countries {
+    name
+  }
+}`;
 
-const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
-  cache,
-  link
-});
+
 
 class Header extends React.Component<any, any> {
-  constructor(props:any) {
+  constructor(props: any) {
     super(props);
     this.state = {
       responseGraphQL: ''
-    }
+    };
   }
 
   componentDidMount() {
-    client.query({query: gql`
-    {
-      countries {
-        name
-      }
-    }
-    `}).then((value: any) => {
-      this.setState({responseGraphQL: value.data.countries[0].name});
-    });
+    // this.setState({responseGraphQL: value.data.countries[0].name});
   }
   render() {
     return (
@@ -63,7 +52,14 @@ class Header extends React.Component<any, any> {
           </ul>
 
           <p>Redux demo : {this.props.message}</p>
-          <p>GraphQL (apollo) demo : {this.state.responseGraphQL}</p>
+            <Query query={GET_CONTRIES_NAME}>
+              {(response: QueryResult<any, Record<string, any>>)=> {
+                console.log(response);
+                if(response.loading) return <p>Loading...</p>
+                console.log(response.data);
+                return <p>GraphQL (apollo) demo : {response.data.countries[0].name}</p>
+              }}
+            </Query>
         </div>
         <hr className='hr' />
       </div>
