@@ -13,10 +13,10 @@
 - [X] redux
 - [X] debugger
 - [X] Quike share ngrok
-- [] Unit test
+- [X] Unit test
+- [] GraphQL
+- [] footer et header
+- [] Add icon to the list preview of technology
 - [] react router with redux
 - [] changing language width react-redux
-- [] GraphQL
-- [] Add icon to the list preview
-- [] footer et header
-- [] version of production
+- [] version of production in webpack

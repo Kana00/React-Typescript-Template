@@ -7,7 +7,8 @@
     "start": "npx webpack-dev-server --open --hot",
     "build": "npx webpack --config ./webpack.config.js",
     "shareProduction": "ngrok http -bind-tls=true file:///Users/YOUR_USER/Documents/web-site-new-project/dist",
-    "shareWebpack": "ngrok http localhost:8080 -bind-tls=true -host-header='localhost:8080'"
+    "shareWebpack": "ngrok http localhost:8080 -bind-tls=true -host-header='localhost:8080'",
+    "test": "npx jest"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -15,6 +16,7 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.1",
     "@babel/preset-typescript": "^7.9.0",
+    "@types/jest": "^25.1.4",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
     "@types/react-redux": "^7.1.7",
@@ -24,6 +26,7 @@
     "favicons-webpack-plugin": "^3.0.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.0",
+    "jest": "^25.1.0",
     "node-sass": "^4.13.1",
     "redux-devtools-extension": "^2.13.8",
     "sass-loader": "^8.0.2",
@@ -38,7 +41,12 @@
   },
   "dependencies": {
     "@unly/universal-language-detector": "^2.0.3",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-http": "^1.5.16",
     "babel-loader": "^8.1.0",
+    "graphql": "^14.6.0",
+    "graphql-tag": "^2.10.3",
     "i18next": "^19.3.3",
     "react": "^16.13.1",
     "react-dom": "npm:@hot-loader/react-dom",
