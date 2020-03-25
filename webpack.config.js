@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
+const isInProduction = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: {
     /* All files that need to be grouped together into a <script src='...'> */
@@ -13,7 +15,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]_[hash].bundle.js'
   },
-  mode: 'development',
+  mode: (isInProduction) ? 'production' : 'development',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'

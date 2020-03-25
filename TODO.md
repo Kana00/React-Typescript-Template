@@ -16,4 +16,4 @@
 - [X] Unit test
 - [X] GraphQL
 - [X] footer et header
-- [] version of production in webpack
+- [X] version of production in webpack

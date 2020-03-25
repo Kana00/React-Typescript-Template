@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npx webpack-dev-server --open --hot",
-    "build": "npx webpack --config ./webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js",
     "shareProduction": "ngrok http -bind-tls=true file:///Users/YOUR_USER/Documents/web-site-new-project/dist",
     "shareWebpack": "ngrok http localhost:8080 -bind-tls=true -host-header='localhost:8080'",
     "test": "npx jest"
@@ -21,6 +21,7 @@
     "@types/react-dom": "^16.9.5",
     "@types/react-redux": "^7.1.7",
     "@types/webpack-env": "^1.15.1",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.4.2",
     "favicons-webpack-plugin": "^3.0.1",
     "file-loader": "^6.0.0",
