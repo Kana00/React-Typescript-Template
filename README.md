@@ -36,6 +36,6 @@ You will need to install the following modules for optimization reasons
 
 ## License
 
-Copyright (c) Kana00. All rights reserved.
+Copyright (c) Kana00 All rights reserved.
 
 Licensed under the MIT license.
