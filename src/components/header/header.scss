@@ -10,14 +10,38 @@
   padding: 1rem 0;
   margin: 0 auto;
   width: $content-width;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.part-one {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-box {
+  width: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 2rem;
+}
+
+.link-in-block {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 300ms;
+  &:hover {
+    line-height: 1.2rem;
+    color: #c4e0ff;
+  }
 }
 
 #title-site {
   margin: 0;
   font-size: 1.4rem;
-}
-
-.content {
-  width: $content-width;
-  margin: 0 auto;
 }

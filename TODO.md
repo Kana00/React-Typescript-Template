@@ -15,8 +15,7 @@
 - [X] Quike share ngrok
 - [X] Unit test
 - [X] GraphQL
-- [] footer et header
-- [] Add icon to the list preview of technology
+- [X] footer et header
 - [] react router with redux
 - [] changing language width react-redux
 - [] version of production in webpack

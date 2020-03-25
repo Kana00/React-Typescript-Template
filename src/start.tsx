@@ -3,10 +3,11 @@ import React from "react";
 import { hot } from 'react-hot-loader/root';
 import store from './redux/store';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Router } from "@reach/router";
 import Header from './components/header/Header';
-import Footer from './components/Footer/Footer';
-import Error404 from './components/Error404/Error404';
+import ContentSite from './components/contentSite/ContentSite';
+import Footer from './components/footer/Footer';
+import Error404 from './components/error404/Error404';
 import './i18n/language';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
@@ -25,11 +26,9 @@ const apolloClient: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   link
 });
 
+
 class App extends React.Component<any, {}> {
-  constructor(props: any) {
-    super(props);
-    // this.props.history.push('/foo');
-  }
+
 
   componentDidMount() {
     document.title = 'React Application';
@@ -37,22 +36,21 @@ class App extends React.Component<any, {}> {
 
   render() {
     return (
-      <BrowserRouter>
-        <ApolloProvider client={apolloClient}>
-          <Provider store={store}>
-            <div className="Site">
-              <Header />
-              <div className="Site-content">
-                <Switch>
-                  <Route exact path="/" />
-                  <Route path="*" component={Error404} />
-                </Switch>
-              </div>
-              <Footer />
+
+      <ApolloProvider client={apolloClient}>
+        <Provider store={store}>
+          <div className="Site">
+            <Header />
+            <div className="Site-content">
+                <Router className="content">
+                  <ContentSite path="/" />
+                  <Error404 path="*" />
+                </Router>
             </div>
-          </Provider>
-        </ApolloProvider>
-      </BrowserRouter>
+            <Footer />
+          </div>
+        </Provider>
+      </ApolloProvider>
     );
   }
 }
