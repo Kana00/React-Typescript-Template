@@ -13,12 +13,14 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name]_[hash].bundle.js'
+    filename: '[name]_[hash].bundle.js',
+    publicPath: "/"
   },
   mode: (isInProduction) ? 'production' : 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    historyApiFallback: true
   },
   plugins: [
     /* Before bundling, remove files in dist folder */
