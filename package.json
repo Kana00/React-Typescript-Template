@@ -2,7 +2,7 @@
   "name": "react-typescript-template",
   "version": "2.0.0",
   "author": "Kana00",
-  "license": "MIT",
+  "license": "SEE LICENSE IN ./LICENSE",
   "scripts": {
     "start": "npx webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js",
