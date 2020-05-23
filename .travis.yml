@@ -7,11 +7,12 @@ branches:
   - master
 
 cache:
+  yarn: true
   directories:
   - node_modules
 
 before_script:
-  - yarn update
+  - yarn upgrade
 
 install:
   - yarn install
