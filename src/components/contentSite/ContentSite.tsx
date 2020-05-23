@@ -1,10 +1,9 @@
 import React from 'react';
 import i18next from 'i18next';
-import { Query, QueryResult } from "react-apollo";
-import gql from "graphql-tag";
+import { Query, QueryResult } from 'react-apollo';
+import gql from 'graphql-tag';
 import { connect } from 'react-redux';
 import { AppDispatch } from '../../redux/store';
-
 
 const GET_CONTRIES_NAME = gql`
 {
