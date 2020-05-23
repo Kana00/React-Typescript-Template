@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - lts/*
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+  - node_modules
+
+before_script:
+  - yarn update
+
+install:
+  - yarn install
+
+script:
+  - yarn test
