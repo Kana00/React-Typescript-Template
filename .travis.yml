@@ -6,6 +6,9 @@ branches:
   only:
   - master
 
+env:
+- NODE_ENV=production
+
 cache:
   yarn: true
   directories:
