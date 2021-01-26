@@ -26,9 +26,7 @@ const apolloClient: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   link
 });
 
-
 class App extends React.Component<any, {}> {
-
 
   componentDidMount() {
     document.title = 'React Application';

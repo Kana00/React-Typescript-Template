@@ -29,7 +29,7 @@ You will need to install the following modules for optimization reasons
 # install node JS here: https://nodejs.org/en/download/
 # install yarn here: https://classic.yarnpkg.com/en/docs/install
 # install ngrok here: https://ngrok.com/download
-> yarn global add npx cross-env
+> yarn global add env-cmd
 > cd path_to_your_project
 > yarn install
 > yarn start
