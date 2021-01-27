@@ -2,9 +2,13 @@
 
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
+<!--
+
 ![Version](https://img.shields.io/badge/version-2.5.0-blue.svg)
 
 [![Build Status](https://travis-ci.org/Kana00/React-Typescript-Template.svg?branch=master)](https://travis-ci.org/Kana00/React-Typescript-Template)
+
+-->
 
 <p align='center'><img src='./src/assets/images/preview_application.png' style='width:100%'/></p>
 

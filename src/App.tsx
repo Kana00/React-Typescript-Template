@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Header } from './components/header/Header';
-import { ContentSite } from './components/contentSite/ContentSite';
+import { ContentSite } from './pages/contentSite/ContentSite';
 import { Footer } from './components/Footer/Footer';
-import { Error404 } from './components/Error404/Error404';
+import { Error404 } from './pages/Error404/Error404';
 import { Router } from '@reach/router';
 
 interface AppProps { }
