@@ -13,6 +13,12 @@ const GET_CONTRIES_NAME = gql`
   }
 }`;
 
+type ContrieResponse = {
+  countries: Array<{
+    name: string;
+  }>
+};
+
 interface ContentSiteProps extends RouteComponentProps { }
 
 export function ContentSite(props: ContentSiteProps) {
@@ -20,7 +26,7 @@ export function ContentSite(props: ContentSiteProps) {
   return (
     <div>
       <h1 id="title-site">{i18next.t('Title')}</h1>
-      <p>{i18next.t('description Application')}</p>
+      <p>{i18next.t('description_Application')}</p>
 
       <ul>
         <li>React-scripts (best implementation of webpack)</li>
@@ -37,10 +43,10 @@ export function ContentSite(props: ContentSiteProps) {
 
       <p>Redux demo : {message}</p>
       <Query query={GET_CONTRIES_NAME}>
-        {(response: QueryResult<any, Record<string, any>>) => {
+        {(response: QueryResult<ContrieResponse>) => {
           if (response.loading) return <p>Loading...</p>;
           const random = Math.floor(Math.random() * 250);
-          return <p>GraphQL (apollo) demo : {response.data.countries[random].name}</p>;
+          return <p>GraphQL (apollo) demo : {response.data?.countries[random].name}</p>;
         }}
       </Query>
     </div>
