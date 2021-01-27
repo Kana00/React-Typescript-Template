@@ -1,7 +1,12 @@
 import { combineReducers, createStore } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension';
-import { rootScreenReducer } from './main_redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { rootScreenReducer, RootScreenDispatcher } from './reducer/rootScreenReducer';
 
+const composeEnhancers = composeWithDevTools({ trace: true, traceLimit: 20 });
+
+export const dispatcher = {
+  RootScreenDispatcher,
+};
 
 const combinedReducer = combineReducers(
   {
@@ -9,16 +14,7 @@ const combinedReducer = combineReducers(
   },
 );
 
+export const store = createStore(combinedReducer, {}, composeEnhancers());
 
-const store = createStore(combinedReducer, devToolsEnhancer({}));
-
-if (process.env.NODE_ENV === 'development' && module.hot) {
-  module.hot.accept('./main_redux', () => {
-    const newRootReducer = require('./main_redux').default;
-    store.replaceReducer(newRootReducer);
-  });
-}
-
-export type AppDispatch = typeof store.dispatch;
-
-export default store;
+export type DispatcherType = typeof dispatcher;
+export type StoreType = ReturnType<typeof combinedReducer>;

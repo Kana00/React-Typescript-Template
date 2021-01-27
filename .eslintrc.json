@@ -1,0 +1,71 @@
+{
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "extends": [
+    "react-app",
+    "airbnb-typescript",
+    "plugin:react-hooks/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "object-curly-spacing": [
+      "warn",
+      "always"
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      "warn",
+      {
+        "ignoreRestArgs": true
+      }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 160,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreComments": true
+      }
+    ],
+    "react/jsx-key": "error",
+    "react/jsx-props-no-spreading": "warn",
+    "import/no-default-export": "off",
+    "react/jsx-boolean-value": "warn",
+    "react/no-unescaped-entities": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": "warn",
+    "react/destructuring-assignment": "off",
+    "import/order": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "@typescript-eslint/quotes": "warn",
+    "@typescript-eslint/comma-dangle": "warn",
+    "quote-props": "warn"
+  }
+}
