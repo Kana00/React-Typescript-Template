@@ -66,6 +66,7 @@
     ],
     "@typescript-eslint/quotes": "warn",
     "@typescript-eslint/comma-dangle": "warn",
-    "quote-props": "warn"
+    "quote-props": "warn",
+    "react/prop-types": "off"
   }
 }
